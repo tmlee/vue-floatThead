@@ -5,7 +5,6 @@
 </template>
 
 <script>
-  // import floatThead from 'floatthead'
   import $ from 'jquery'
   import 'floatthead'
 
@@ -31,12 +30,18 @@
       }
     },
     methods: {
-      destroy () {},
-      reflow () {},
-      getRowGroups () {}
+      destroy () {
+        return this.table.floatThead('destroy')
+      },
+      reflow () {
+        return this.table.floatThead('reflow')
+      },
+      getRowGroups () {
+        return this.table.floatThead('getRowGroups')
+      }
     },
     mounted () {
-      let table = $('#floatTheadTable')
+      this.table = $('#floatTheadTable')
       let options = {
         position: this.position,
         scrollContainer: this.scrollContainer,
@@ -53,7 +58,14 @@
         autoReflow: this.autoReflow
       }
 
-      table.floatThead(options)
+      this.table.floatThead(options)
+
+      this.table.on('floatThead', (e, isFloated, $floatContainer) =>
+        this.$emit('floatThead', e, isFloated, $floatContainer)
+      )
+      this.table.on('reflowed', (e, $floatContainer) =>
+        this.$emit('reflowed', e, $floatContainer)
+      )
     }
   }
 </script>
