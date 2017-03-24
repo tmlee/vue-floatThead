@@ -1,27 +1,67 @@
 # vue-floatthead
 
-> Vue.js wrapper for the floatThead library
+> Vue 2 component for [jquery.floatThead](http://mkoryak.github.io/floatThead/)
 
-## Build Setup
+# Installation
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
+## npm
+```shell
+$ npm install vue-floatthead
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Getting Started
+
+```html
+<script>
+  import FloatThead from 'vue-floatthead'
+  export default {
+    components: {
+      FloatThead
+    }
+  }
+</script>
+
+<float-thead></float-thead>
+```
+
+## Usages
+
+Pass [options](http://mkoryak.github.io/floatThead/#options) to the component
+```html
+<float-thead position='fixed' floatTableClass='awesome-table'></float-thead>
+```
+
+Call [methods](http://mkoryak.github.io/floatThead/#methods) of the component
+`destroy()`, `reflow()`, or `getRowGroups()`
+
+```html
+<float-thead ref='awesometable'></float-thead>
+
+<script>
+  ...
+  methods: {
+    triggerDestroy () {
+      this.$refs.awesometable.destroy()
+    }
+  }
+  ...
+</script>
+```
+
+Trigger [events](http://mkoryak.github.io/floatThead/#events)
+
+```html
+<script>
+  ...
+  mounted () {
+    this.$refs.awesometable.$on('floatThead', (e, isFloated, floatContainer) =>
+      console.log('floatThead triggered', e, isFloated, floatContainer)
+    )
+    this.$refs.awesometable.$on('reflowed', (e, floatContainer) =>
+      console.log('reflowed triggered', e, floatContainer)
+    )
+  }
+  ...
+</script>
+
+```
