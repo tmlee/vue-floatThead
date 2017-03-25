@@ -2,12 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import FloatThead from '../../dist/vue-floatthead.js'
 
 Vue.config.productionTip = false
+
+Vue.use(FloatThead)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: '<App/>',
+  template: '<div><App/></div>',
   components: { App }
 })
