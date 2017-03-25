@@ -1,7 +1,7 @@
 import FloatThead from './components/FloatThead.vue'
 
 function install(Vue, options) {
-   Vue.component('FloatThead', FloatThead);
+   Vue.component('FloatTheadTable', FloatThead);
 }
 
 export default install;

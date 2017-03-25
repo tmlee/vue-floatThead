@@ -12,30 +12,36 @@ $ npm install vue-floatthead
 ## Getting Started
 
 ```html
+<template>
+  <float-thead-table></float-thead-table>
+</template>
+
 <script>
+  import Vue from 'vue'
   import FloatThead from 'vue-floatthead'
+
+  Vue.use(FloatThead)
+
   export default {
     components: {
       FloatThead
     }
   }
 </script>
-
-<float-thead></float-thead>
 ```
 
 ## Usages
 
 Pass [options](http://mkoryak.github.io/floatThead/#options) to the component
 ```html
-<float-thead position='fixed' floatTableClass='awesome-table'></float-thead>
+<float-thead-table position='fixed' floatTableClass='awesome-table'></float-thead-table>
 ```
 
 Call [methods](http://mkoryak.github.io/floatThead/#methods) of the component
 `destroy()`, `reflow()`, or `getRowGroups()`
 
 ```html
-<float-thead ref='awesometable'></float-thead>
+<float-thead-table ref='awesometable'></float-thead-table>
 
 <script>
   ...
@@ -49,7 +55,6 @@ Call [methods](http://mkoryak.github.io/floatThead/#methods) of the component
 ```
 
 Trigger [events](http://mkoryak.github.io/floatThead/#events)
-
 ```html
 <script>
   ...

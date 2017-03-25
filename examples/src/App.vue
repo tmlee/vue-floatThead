@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class='narrow'>
-      <float-thead 
+      <float-thead-table 
         ref='ftable' 
         floatTableClass='floatedTable' 
         class="floated"
@@ -110,7 +110,7 @@
             <td>Even More Cell Content 3</td>
         </tr>
       </tbody>
-      </float-thead>
+      </float-thead-table>
     </div>
 
     <button v-on:click="triggerDestroy">Destroy Table</button>
