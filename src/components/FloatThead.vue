@@ -12,7 +12,7 @@
     name: 'float-thead',
     props: {
       position: { type: String, default: 'auto' },
-      scrollContainer: { type: [Boolean, Function], default: ()=>{ } },
+      scrollContainer: { type: [Boolean, Function], default: () => { } },
       responsiveContainer: { type: Function },
       headerCellSelector: { type: String, default: 'tr:first>th:visible' },
       floatTableClass: { type: String, default: 'floatThead-table' },

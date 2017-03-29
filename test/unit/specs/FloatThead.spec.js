@@ -28,7 +28,7 @@ describe('FloatThead.vue', () => {
       autoReflow: true
     }
     const Constructor = Vue.extend(FloatThead)
-  	const vm = new Constructor({propsData: customProps}).$mount()
+    const vm = new Constructor({propsData: customProps}).$mount()
     expect(vm.$props.position).to.eql('fixed')
     expect(vm.$props.scrollContainer).to.a('function')
     expect(vm.$props.responsiveContainer).to.a('function')
@@ -44,27 +44,27 @@ describe('FloatThead.vue', () => {
     expect(vm.$props.autoReflow).to.be.true
   })
 
-  it('should pass the props data to floatThead options on mount', () => {
+  it.skip('should pass the props data to floatThead options on mount', () => {
 
   })
 
-  it('should listen to floatThead event on mount', ()=> {
+  it.skip('should listen to floatThead event on mount', () => {
 
   })
 
-  it('should listen to reflowed event on mount', ()=> {
+  it.skip('should listen to reflowed event on mount', () => {
 
   })
 
-  it('should destroy table', () => {
+  it.skip('should destroy table', () => {
 
   })
 
-  it('should reflow table', () => {
-    
+  it.skip('should reflow table', () => {
+
   })
 
-  it('should getRowGroups', () => {
-    
+  it.skip('should getRowGroups', () => {
+
   })
 })
