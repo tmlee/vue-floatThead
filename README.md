@@ -13,7 +13,22 @@ $ npm install vue-floatthead
 
 ```html
 <template>
-  <float-thead-table></float-thead-table>
+  <float-thead-table>
+    <thead>
+      <tr>
+          <th><a href="#" id="demoHeader1">xclick me</a></th>
+          <th><a href="#" id="demoHeader2">mouse over me</a></th>
+          <th><a href="#" id="demoHeader3">Header...3</a></th>
+      </tr>
+      <tbody>
+        <tr>
+            <td>Cell Content 1</td>
+            <td>Cell Content 2</td>
+            <td>Cell Content 3</td>
+        </tr>
+      </tbody>
+    </thead>
+  </float-thead-table>
 </template>
 
 <script>
