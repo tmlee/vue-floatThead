@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tmlee/vue-floatThead.svg)](https://travis-ci.org/tmlee/vue-floatThead)
+
 # vue-floatthead
 
 > Vue 2 component for [jquery.floatThead](http://mkoryak.github.io/floatThead/)
