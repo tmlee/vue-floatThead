@@ -6,7 +6,6 @@ describe('FloatThead.vue', () => {
     const Constructor = Vue.extend(FloatThead)
     const vm = new Constructor().$mount()
     expect(vm.$el.tagName).to.eql('TABLE')
-    expect(vm.$el.getAttribute('id')).to.eql('floatTheadTable')
   })
 
   it('should receive parameters from props', () => {
