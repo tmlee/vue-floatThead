@@ -6,7 +6,6 @@ describe('FloatThead.vue', () => {
     const Constructor = Vue.extend(FloatThead)
     const vm = new Constructor().$mount()
     expect(vm.$el.tagName).to.eql('TABLE')
-    expect(vm.$el.getAttribute('id')).to.eql('floatTheadTable')
   })
 
   it('should receive parameters from props', () => {
@@ -66,5 +65,53 @@ describe('FloatThead.vue', () => {
 
   it.skip('should getRowGroups', () => {
 
+  })
+
+  describe('multiple FloatThead on a page', () => {
+    beforeEach(() => {
+      const fixture = `
+        <div id="fixture">
+          <div></div>
+        </div>`
+
+      document.body.insertAdjacentHTML(
+        'afterbegin',
+        fixture
+      )
+    })
+
+    afterEach(() => {
+      document.body.removeChild(document.querySelector('#fixture'))
+    })
+
+    it('should be distinct', () => {
+      const Wrapper = Vue.extend({
+        template: `
+          <div>
+            <float-thead float-table-class="table1">
+              <thead></thead>
+              <tbody></tbody>
+            </float-thead>
+
+            <float-thead float-table-class="table2">
+              <thead></thead>
+              <tbody></tbody>
+            </float-thead>
+          </div>
+        `,
+        components: {
+          FloatThead
+        }
+      })
+
+      const wrapper = new Wrapper().$mount('#fixture div')
+
+      const table1 = wrapper.$el.querySelector('table.table1')
+      const table2 = wrapper.$el.querySelector('table.table2')
+
+      expect(table1).to.exist
+      expect(table2).to.exist
+      expect(table1).not.to.equal(table2)
+    })
   })
 })

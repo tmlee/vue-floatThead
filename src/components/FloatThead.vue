@@ -1,5 +1,5 @@
 <template>
-  <table id="floatTheadTable">
+  <table ref="table">
     <slot></slot>
   </table>
 </template>
@@ -42,7 +42,7 @@
       }
     },
     mounted () {
-      this.table = $('#floatTheadTable')
+      this.table = $(this.$refs.table)
       let options = {
         position: this.position,
         scrollContainer: this.scrollContainer,
